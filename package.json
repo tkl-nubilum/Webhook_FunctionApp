@@ -1,0 +1,33 @@
+{
+  "name": "webhook_functionapp",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "test": "echo \"No tests yet...\"",
+    "deploy": "npm install && npm run clean && npm run build && npm prune --production && func azure functionapp publish Webhook --typescript"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.0.0",
+    "@azure/identity": "^4.13.0",
+    "@pnp/azidjsclient": "^4.17.0",
+    "@pnp/common": "^2.15.0",
+    "@pnp/logging": "^4.17.0",
+    "@pnp/nodejs": "^4.17.0",
+    "@pnp/odata": "^2.15.0",
+    "@pnp/sp": "^4.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.0"
+  },
+  "main": "dist/src/{index.js,functions/*.js}"
+}
