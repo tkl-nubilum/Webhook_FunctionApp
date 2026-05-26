@@ -1,0 +1,11 @@
+local.settings.json
+
+# Editor config
+.vscode
+
+# Local build output and deps
+node_modules
+
+# Git related stuff
+.git
+.gitignore
